@@ -21,6 +21,7 @@ def apply_coupons(cart, coupons)
       puts cart_item
       puts discounts[:item]
       if cart_item == discounts[:item] 
+        puts "Made it into the while loop"
         while cart_item_info[:count] > discounts[:num]
           cart_item_info[:count] - discounts[:num]
           counter += 1

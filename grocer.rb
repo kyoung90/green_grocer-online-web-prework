@@ -37,7 +37,6 @@ end
 
 def apply_clearance(cart)
   # code here
-  puts cart
   cart.each do |cart_item, cart_item_info|
     if cart_item_info[:clearance]
       cart_item_info[:price] *= 0.80
@@ -60,6 +59,8 @@ def checkout(cart, coupons)
     puts "price #{cart_item_info[:price]}"
     puts "total #{total}"
   end 
+  
+  puts hash
   
   if total > 100
     total *= 0.90

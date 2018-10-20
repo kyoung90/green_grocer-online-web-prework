@@ -60,7 +60,7 @@ def checkout(cart, coupons)
   end 
   
   if total > 100
-    total *= .90
+    total *= 0.90
     total = total.round(2)
   end 
   

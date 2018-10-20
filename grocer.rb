@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
           cart["#{cart_item} W/COUPON"] = {:price => discounts[:cost], :clearance => cart_item_info[:clearance]}
         end 
         puts "cart with coupon"
-        puts cart["#{cart_item} W/COUPON"]
+        puts cart
          cart["#{cart_item} W/COUPON"].merge!({:count => counter})
       end 
     end 

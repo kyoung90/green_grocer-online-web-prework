@@ -52,4 +52,10 @@ def checkout(cart, coupons)
   hash = consolidate_cart(cart)
   hash = apply_coupons(hash, coupons)
   hash = apply_clearance(hash) 
+  
+  total = 0 
+  
+  hash.each do |cart_item, cart_item_info|
+    total += cart_item_info[:price]
+  end 
 end

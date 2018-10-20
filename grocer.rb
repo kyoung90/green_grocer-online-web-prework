@@ -25,7 +25,8 @@ def apply_coupons(cart, coupons)
           puts "Made it into the while loop"
           cart_item_info[:count] -= discounts[:num]
           counter += 1
-          cart["#{cart_item} W/COUPON"] = {:price => discounts[:cost], :clearance => cart_item_info[:clearance]}
+          # cart["#{cart_item} W/COUPON"] = {:price => discounts[:cost], :clearance => cart_item_info[:clearance]}
+          cart["#{cart_item} W/COUPON"] = cart_item_info
         end 
         puts "cart with coupon"
         puts cart

@@ -16,17 +16,15 @@ end
 def apply_coupons(cart, coupons)
   # code here
   hash = Hash.new(0)
-  counter = 0
+
   cart.each do |cart_item, cart_item_info|
     coupons.each do |discounts|
       if cart_item == discounts[:item] 
-        while cart_item_info[:count] >= discounts[:num]
+        if cart_item_info[:count] >= discounts[:num]
           cart_item_info[:count] -= discounts[:num]
-          counter += 1
           hash["#{cart_item} W/COUPON"] = {:price => discounts[:cost], :clearance => cart_item_info[:clearance]}
         end 
          hash["#{cart_item} W/COUPON"].merge!({:count => counter})
-         counter = 0
       end 
     end 
   end 

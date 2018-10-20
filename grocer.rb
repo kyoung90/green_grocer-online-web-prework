@@ -58,4 +58,11 @@ def checkout(cart, coupons)
   hash.each do |cart_item, cart_item_info|
     total += cart_item_info[:price]
   end 
+  
+  if total > 100
+    total *= .90
+    total = total.round(2)
+  end 
+  
+  return total
 end

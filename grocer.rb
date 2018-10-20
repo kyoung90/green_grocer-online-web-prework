@@ -55,12 +55,9 @@ def checkout(cart, coupons)
   hash = apply_clearance(hash) 
   
   total = 0 
-  puts hash
   
   hash.each do |cart_item, cart_item_info|
     total += cart_item_info[:price] * cart_item_info[:count]
-    puts "price #{cart_item_info[:price]}"
-    puts "total #{total}"
   end 
   
   if total > 100

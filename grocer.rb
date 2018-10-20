@@ -19,10 +19,10 @@ def apply_coupons(cart, coupons)
   cart.each do |cart_item, cart_item_info|
     coupons.each do |discounts|
       if cart_item == discounts[:item] 
-        puts "Made it into the while loop"
         puts cart_item_info[:count]
         puts discounts[:num]
         while cart_item_info[:count] > discounts[:num]
+          puts "Made it into the while loop"
           cart_item_info[:count] - discounts[:num]
           counter += 1
           cart["#{cart_item} W/COUPON"] = {:price => discounts[:cost], :clearance => cart_item_info[:clearance]}

@@ -32,7 +32,6 @@ def apply_coupons(cart, coupons)
     end 
   end 
   cart.merge!(hash)
-  puts cart
   return cart
 end
 

@@ -24,8 +24,11 @@ def apply_coupons(cart, coupons)
           cart_item_info[:count] -= discounts[:num]
           hash["#{cart_item} W/COUPON"] = {:price => discounts[:cost], :clearance => cart_item_info[:clearance]}
         end 
-          if hash.has_key?()
-         hash["#{cart_item} W/COUPON"].merge!({:count => counter})
+        if hash.has_key?("#{cart_item} W/COUPON")
+          hash["#{cart_item} W/COUPON"].merge!({:count => 1})
+        else
+          hash["#{cart_item} W/COUPON"][:count] += 1
+        end 
       end 
     end 
   end 

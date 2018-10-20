@@ -21,6 +21,8 @@ def apply_coupons(cart, coupons)
     coupons.each do |discounts|
       if cart_item == discounts[:item] 
         if cart_item_info[:count] >= discounts[:num]
+          puts cart_item_info[count]
+          puts discounts[:num]
           cart_item_info[:count] -= discounts[:num]
         end 
         if hash.has_key?("#{cart_item} W/COUPON")
